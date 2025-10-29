@@ -107,9 +107,8 @@ We're printing the `local_results` from Google Maps in this case.
 ### Other Programming Languages
 While you can use our APIs using a simple GET request with any programming language, you can also see our ready-to-use libraries here: [SerpApi Integrations](https://serpapi.com/integrations?utm_source=github_google_maps_scraper).
 
-### Google Maps Scraper Parameter
-
-Please find the parameters for this API below:
+## Google Maps Scraper Parameter
+Please find the parameters for the Google Maps Search API below:
 
 | Name          | Description                                                                                                                                                                                                                | Requirement |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
@@ -121,7 +120,63 @@ Please find the parameters for this API below:
 | gl            | Parameter defines the country to use for the Google Maps search. It's a two-letter country code. (e.g.,us for the United States, uk for United Kingdom, or fr for France).                                                 | Optional    |
 | Pagination    |                                                                                                                                                                                                                            |             |
 | start         | Parameter defines the result offset. It skips the given number of results. It's used for pagination. (e.g., 0 (default) is the first page of results, 20 is the 2nd page of results, 40 is the 3rd page of results, etc.). | Optional    |
-|               | Visit our docs for more                                                                                                                                                                                                    |             |
+
+If you're searching for a specific place, you can use one of these parameters: `data`, `place_id`, or `data_cid`. Visit [our documentation](https://serpapi.com/google-maps-api#api-parameters-advanced-google-maps-parameters) for more information.
+
+
+## Available data on Google Maps
+Google Maps can return different information from time to time, depending on what information is available on their side. Here is what the `local_results` array may contain:
+
+```
+ "local_results": [
+    {
+      "position": "Integer - Position of the local result on the page",
+      "title": "String - Title of the local result",
+      "place_id": "String - Place ID of the local result",
+      "data_id": "String - Data ID of the local result",
+      "data_cid": "String - Data CID of the local result (also known as `ludocid` in Google Local API)",
+      "reviews_link": "String - URL to the reviews of the local result",
+      "photos_link": "String - URL to the photos of the local result",
+      "gps_coordinates": {
+        "latitude": "Float - Latitude of the local result",
+        "longitude": "Float - Longitude of the local result"
+      },
+      "place_id_search": "String - URL to the SerpApi place search of the local result",
+      "provider_id": "String - Provider ID of the place",
+      "rating": "Float - Rating of the local result",
+      "reviews": "Integer - Number of reviews of the local result",
+      "price": "String - Price of the local result. e.g. $, $$, $$$, etc",
+      "type": "String - Type of the local result",
+      "types": "Array - Types of the local result",
+      "type_id": "String - Type ID of the local result",
+      "type_ids": "Array - Type IDs of the local result",
+      "address": "String - Address of the local result",
+      "open_state": "String - Open state of the local result",
+      "hours": "String - Open/Close hours of the local result",
+      "operating_hours": {
+        "day as key": "String - Open/Close hours of the local result"
+      },
+      "phone": "String - Phone number of the local result",
+      "website": "String - Website of the local result",
+      "amenities": "Array - Amenities of the local result",
+      "description": "String - Description of the local result",
+      "service_options": "Hash - Service options of the local result",
+      "thumbnail": "String - Thumbnail of the local result",
+      "extensions": [
+        {
+          "<extension_type>": "Array of strings - List of supported extensions"
+        },
+        ...
+      ],
+      "unsupported_extensions": [
+        {
+          "<extension_type>": "Array of strings - List of unsupported extensions"
+        },
+        ...
+      ],
+    }
+  ],
+```
 
 ## Blog tutorial 
 - [Scrape Google Maps data and reviews using Python](https://serpapi.com/blog/scrape-google-maps-data-and-reviews-using-python/)
