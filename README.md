@@ -124,7 +124,7 @@ Please find the parameters for the Google Maps Search API below:
 If you're searching for a specific place, you can use one of these parameters: `data`, `place_id`, or `data_cid`. Visit [our documentation](https://serpapi.com/google-maps-api#api-parameters-advanced-google-maps-parameters) for more information.
 
 
-## Available data on Google Maps
+## Available data on Google Maps (JSON Response)
 Google Maps can return different information from time to time, depending on what information is available on their side. Here is what the `local_results` array may contain:
 
 ```
@@ -177,6 +177,15 @@ Google Maps can return different information from time to time, depending on wha
     }
   ],
 ```
+
+## Use cases
+Here are some use cases, but not limited to, for the Google Maps API:
+
+- Generate geo-targeted lead lists by scraping nearby businesses (name, phone, website, rating) for any keyword and location.
+- Monitor competitors by tracking ratings, review counts, and price levels across multiple areas on a schedule.
+- Enrich your CRM by resolving a place to structured details (hours, categories, coordinates) via place IDs.
+- Analyze customer sentiment by pulling recent Google Maps reviews (text, stars, timestamps) for selected places.
+- Build location pickers and store locators by querying places around a lat/lng or grid and plotting the structured results.
 
 ## Blog tutorial 
 - [Scrape Google Maps data and reviews using Python](https://serpapi.com/blog/scrape-google-maps-data-and-reviews-using-python/)
