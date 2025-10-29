@@ -27,7 +27,17 @@ The zoom attribute ranges from 3z, map completely zoomed out - to 21z, map compl
 ## Code examples
 Here are some code examples based on your favorite programming languages.
 
-### Python Integration Example
+### cURL Integration
+
+```
+curl --get https://serpapi.com/search \
+ -d engine="google_maps" \
+ -d q="Coffee" \
+ -d ll="@40.7455096,-74.0083012,14z" \
+ -d api_key="secret_api_key"
+```
+
+### Python Integration
 
 Preparation for accessing the SerpApi API in Python
 
@@ -68,7 +78,7 @@ print(response["local_results"])
 > Warning: Sometimes, this API returns `place_results` instead of `local_results` if Google Maps returns a specific place
 
 
-### JavaScript Integration Example
+### JavaScript Integration
 
 Step 1:  
 Install the [SerpApi JavaScript package](https://github.com/serpapi/serpapi-javascript):
