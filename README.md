@@ -74,7 +74,6 @@ If you're only interested in the `local_results`, you can print them from the re
 print(response["local_results"])
 ```
 
-
 > Warning: Sometimes, this API returns `place_results` instead of `local_results` if Google Maps returns a specific place
 
 
@@ -107,6 +106,22 @@ We're printing the `local_results` from Google Maps in this case.
 
 ### Other Programming Languages
 While you can use our APIs using a simple GET request with any programming language, you can also see our ready-to-use libraries here: [SerpApi Integrations](https://serpapi.com/integrations?utm_source=github_google_maps_scraper).
+
+### Google Maps Scraper Parameter
+
+Please find the parameters for this API below:
+
+| Name          | Description                                                                                                                                                                                                                | Requirement |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| q             | Parameter defines the query you want to search                                                                                                                                                                             | Required    |
+| ll            | Parameter defines the GPS coordinates of the location where you want the search to originate from. Its value must match the following format: @ + latitude + , + longitude + , + zoom/map_height                           | Required    |
+| Localization  |                                                                                                                                                                                                                            |             |
+| google_domain | Parameter defines the Google domain to use. It defaults to google.com                                                                                                                                                      | Optional    |
+| hl            | Parameter defines the language to use for the Google Maps search. It's a two-letter language code. (e.g.,en for English, es for Spanish, or fr for French).                                                                | Optional    |
+| gl            | Parameter defines the country to use for the Google Maps search. It's a two-letter country code. (e.g.,us for the United States, uk for United Kingdom, or fr for France).                                                 | Optional    |
+| Pagination    |                                                                                                                                                                                                                            |             |
+| start         | Parameter defines the result offset. It skips the given number of results. It's used for pagination. (e.g., 0 (default) is the first page of results, 20 is the 2nd page of results, 40 is the 3rd page of results, etc.). | Optional    |
+|               | Visit our docs for more                                                                                                                                                                                                    |             |
 
 ## Blog tutorial 
 - [Scrape Google Maps data and reviews using Python](https://serpapi.com/blog/scrape-google-maps-data-and-reviews-using-python/)
