@@ -29,7 +29,7 @@ Here are some code examples based on your favorite programming languages.
 
 ### cURL Integration
 
-```
+``` bash
 curl --get https://serpapi.com/search \
  -d engine="google_maps" \
  -d q="Coffee" \
@@ -127,7 +127,7 @@ If you're searching for a specific place, you can use one of these parameters: `
 ## Available data on Google Maps (JSON Response)
 Google Maps can return different information from time to time, depending on what information is available on their side. Here is what the `local_results` array may contain:
 
-```
+``` json
  "local_results": [
     {
       "position": "Integer - Position of the local result on the page",
